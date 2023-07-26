@@ -1,6 +1,6 @@
 {
   "name": "@hovrcat/eeko",
-  "version": "0.1.1",
+  "version": "0.1.0",
   "type": "commonjs",
   "description": "Translation files manager",
   "license": "MIT",
@@ -12,10 +12,10 @@
   "scripts": {
     "nx": "nx",
     "build": "",
-    "bump-version:major": "npm version major --force && cd packages/core && npm version major --force",
-    "bump-version:minor": "npm version minor --force && cd packages/core && npm version minor --force",
-    "bump-version:patch": "npm version patch --force && cd packages/core && npm version patch --force",
-    "build:lib-pack": "nx core:build && nx ui:build && tools/scripts/prepackage.sh &&  cd dist/core && npm pack",
+    "bump-version:major": "npm version major && cd packages/core && npm version major",
+    "bump-version:minor": "npm version minor && cd packages/core && npm version minor",
+    "bump-version:patch": "npm version patch && cd packages/core && npm version patch",
+    "build:lib-pack": "nx core:build && nx ui:build && ./tools/scripts/prepackage.sh &&  cd dist/core && npm pack",
     "commit-git": "git commit -m \"build: adds new release\"  && git push origin && git push origin --tags",
     "pre-publish:minor": "npm run bump-version:minor && npm run build:lib-pack",
     "pre-publish:major": "npm run bump-version:major && npm run build:lib-pack",

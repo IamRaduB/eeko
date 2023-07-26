@@ -14,8 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {},
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@hovrcat/eeko": ["packages/core/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -8,5 +8,13 @@
   "private": false,
   "bin": {
     "eeko": "./index.js"
-  }
+  },
+  "keywords": [
+    "json",
+    "i18n",
+    "manager",
+    "eeko",
+    "cli",
+    "ui"
+  ]
 }

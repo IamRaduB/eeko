@@ -1,6 +1,5 @@
-cd ../eeko-ui || exit
-npm ci
-npm run build
-rm -rf ../eeko/dist/ui
-mkdir ../eeko/dist/ui
-cp -r dist/* ../eeko/dist/ui
+cp -r dist/ui dist/core/ui
+cp -r docs dist/core/docs
+cp ./README.md dist/core
+cp ./LICENSE dist/core
+cp ./Changelog.md dist/core
