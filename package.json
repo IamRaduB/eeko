@@ -1,6 +1,6 @@
 {
   "name": "@hovrcat/eeko",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "commonjs",
   "description": "Translation files manager",
   "license": "MIT",
@@ -11,6 +11,7 @@
   },
   "scripts": {
     "nx": "nx",
+    "build": "",
     "bump-version:major": "npm version major --force && cd packages/core && npm version major --force",
     "bump-version:minor": "npm version minor --force && cd packages/core && npm version minor --force",
     "bump-version:patch": "npm version patch --force && cd packages/core && npm version patch --force",
