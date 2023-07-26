@@ -1,0 +1,12 @@
+{
+  "name": "@hovrcat/eeko",
+  "version": "0.1.0",
+  "type": "commonjs",
+  "description": "Translation files manager",
+  "license": "MIT",
+  "author": "hovrcat",
+  "private": false,
+  "bin": {
+    "eeko": "./index.js"
+  }
+}

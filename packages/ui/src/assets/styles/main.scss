@@ -1,0 +1,45 @@
+@import "tailwind.css";
+@import "common";
+
+$fa-font-path: '/webfonts';
+@import "../fontawesome/fontawesome";
+@import "../fontawesome/solid";
+
+@font-face {
+  font-family: 'Roboto';
+  src: url("/fonts/Roboto/Roboto-Black.ttf") format('truetype');
+  font-style: normal;
+  font-weight: 900;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("/fonts/Roboto/Roboto-Bold.ttf") format('truetype');
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("/fonts/Roboto/Roboto-Medium.ttf") format('truetype');
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Roboto';
+  src: url("/fonts/Roboto/Roboto-Regular.ttf") format('truetype');
+  font-style: normal;
+  font-weight: 400;
+}
+
+html {
+  @apply bg-slate-100;
+  font-family: 'Roboto';
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+#__nuxt {
+  @apply w-full h-full;
+}

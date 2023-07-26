@@ -1,0 +1,24 @@
+@mixin commonBtn() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+.fab {
+  @include commonBtn();
+  border-radius: 100%;
+  outline: none;
+}
+
+.btn {
+  @include commonBtn();
+  border-radius: 0.5rem;
+}
+
+.searchBar {
+  width: calc(100% - 128px);
+}
