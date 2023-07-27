@@ -31,8 +31,12 @@ export class UiServer {
         origin: 'http://localhost:5173',
       });
     } else {
+      const indexPath = path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        'ui'
+      );
       this.app.register(fastifyStatic, {
-        root: path.resolve('ui'),
+        root: indexPath,
       });
     }
   }
