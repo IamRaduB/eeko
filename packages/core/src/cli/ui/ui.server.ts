@@ -157,14 +157,14 @@ export class UiServer {
 
     this.app.get('/', (req, res) => {
       const stream = fs.createReadStream(
-        path.resolve(__dirname, 'ui', 'index.html')
+        path.join(path.dirname(import.meta.url), 'ui', 'index.html')
       );
       res.type('text/html').send(stream);
     });
 
     this.app.all('/project/*', (req, res) => {
       const stream = fs.createReadStream(
-        path.resolve(__dirname, 'ui', 'index.html')
+        path.join(path.dirname(import.meta.url), 'ui', 'index.html')
       );
       res.type('text/html').send(stream);
     });
