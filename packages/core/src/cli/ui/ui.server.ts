@@ -1,5 +1,6 @@
 import Fastify, { FastifyInstance } from 'fastify';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import { FileSystemService } from '../fs.service';
 import configServiceInstance from '../config.service';
 import { TranslateService } from '../translate.service';
@@ -156,16 +157,22 @@ export class UiServer {
     });
 
     this.app.get('/', (req, res) => {
-      const stream = fs.createReadStream(
-        path.resolve(path.dirname(import.meta.url), 'ui', 'index.html')
+      const indexPath = path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        'ui',
+        'index.html'
       );
+      const stream = fs.createReadStream(indexPath);
       res.type('text/html').send(stream);
     });
 
     this.app.all('/project/*', (req, res) => {
-      const stream = fs.createReadStream(
-        path.resolve(path.dirname(import.meta.url), 'ui', 'index.html')
+      const indexPath = path.resolve(
+        path.dirname(fileURLToPath(import.meta.url)),
+        'ui',
+        'index.html'
       );
+      const stream = fs.createReadStream(indexPath);
       res.type('text/html').send(stream);
     });
   }
