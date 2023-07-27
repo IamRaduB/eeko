@@ -8,14 +8,24 @@ export class FileSystemService implements StorageService {
 
   async listStorage(dirName: string) {
     const dirPath = join(this.basePath, dirName);
-    const result = await readdir(dirPath);
-    return result.map((entry): ProjectTranslation => {
-      return {
-        fileName: entry.substring(0, entry.lastIndexOf('.')),
-        fileFullName: entry,
-        fullPath: join(this.basePath, dirName, entry),
-      };
-    });
+    try {
+      const result = await readdir(dirPath);
+      return result.map((entry): ProjectTranslation => {
+        return {
+          fileName: entry.substring(0, entry.lastIndexOf('.')),
+          fileFullName: entry,
+          fullPath: join(this.basePath, dirName, entry),
+        };
+      });
+    } catch (e) {
+      console.warn(
+        'I18n directory {',
+        dirName,
+        '} was not found. Rerun "eeko init" or update ".eekorc.json" file with the correct i18nLocation'
+      );
+      console.debug(e);
+      return [];
+    }
   }
 
   async readFile(
