@@ -9,6 +9,11 @@
   "bin": {
     "eeko": "./index.js"
   },
+  "scripts": {
+    "build:dev": "esbuild src/index.ts --bundle --platform=node --packages=external --outfile=dist/index.js",
+    "start:ui": "npm run build:dev && cross-env DEVMODE=true node dist/index.js ui",
+    "start:init": "npm run build:dev && node dist/index.js init"
+  },
   "keywords": [
     "json",
     "i18n",
