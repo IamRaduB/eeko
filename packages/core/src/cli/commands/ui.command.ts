@@ -1,11 +1,25 @@
 import open from 'open';
 import type { UiServer } from '../ui/ui.server';
-import { ConfigService } from '../config.service';
+import configServiceInstance, { ConfigService } from '../config.service';
+import { Command } from '../../types/command';
 
-export class UiCommand {
-  constructor(private server: UiServer, private configServiceInstance: ConfigService) {}
+export class UiCommand implements Command {
+  constructor(
+    private server: UiServer,
+    private configServiceInstance: ConfigService
+  ) {}
   async handle() {
-    await this.server.listen('localhost', this.configServiceInstance.config.uiPort);
-    await open(`http://localhost:${this.configServiceInstance.config.uiPort}`, { wait: false });
+    await this.server.listen(
+      'localhost',
+      this.configServiceInstance.config.uiPort
+    );
+
+    if (process.env.devMode) {
+      return;
+    }
+
+    await open(`http://localhost:${this.configServiceInstance.config.uiPort}`, {
+      wait: false,
+    });
   }
 }

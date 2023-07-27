@@ -25,16 +25,13 @@ export class UiServer {
   }
 
   setupApp() {
-    if (configServiceInstance.config.devMode) {
+    if (process.env.devMode) {
       this.app.register(cors, {
         origin: 'http://localhost:5173',
       });
-      this.app.register(fastifyStatic, {
-        root: path.resolve('../', 'eeko-ui', 'dist'),
-      });
     } else {
       this.app.register(fastifyStatic, {
-        root: path.resolve('dist/ui'),
+        root: path.resolve('ui'),
       });
     }
   }
@@ -159,16 +156,12 @@ export class UiServer {
     });
 
     this.app.get('/', (req, res) => {
-      const stream = fs.createReadStream(
-        path.resolve('../', 'eeko-ui', 'dist', 'index.html')
-      );
+      const stream = fs.createReadStream(path.resolve('ui', 'index.html'));
       res.type('text/html').send(stream);
     });
 
     this.app.all('/project/*', (req, res) => {
-      const stream = fs.createReadStream(
-        path.resolve('../', 'eeko-ui', 'dist', 'index.html')
-      );
+      const stream = fs.createReadStream(path.resolve('ui', 'index.html'));
       res.type('text/html').send(stream);
     });
   }

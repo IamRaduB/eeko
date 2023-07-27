@@ -37,3 +37,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+packages/core/i18n
+packages/core/.eekorc.json
+packages/ui/.env

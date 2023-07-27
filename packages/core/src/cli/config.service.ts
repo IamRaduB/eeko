@@ -1,9 +1,7 @@
 import { readFile } from 'fs/promises';
 import { join } from 'path';
-import { TranslatorConfig } from '../types/config';
+import { CONFIG_FILE_NAME, TranslatorConfig } from '../types/config';
 import * as process from 'process';
-
-const CONFIG_FILE_NAME = '.translatorrc.json';
 
 export class ConfigService {
   private defaultConfig: TranslatorConfig;
@@ -12,6 +10,7 @@ export class ConfigService {
 
   constructor() {
     this.defaultConfig = {
+      rootDir: './',
       i18nLocation: './i18n',
       uiPort: 2016,
       devMode: false,
@@ -24,9 +23,12 @@ export class ConfigService {
 
   async readConfigFile() {
     try {
-      const config = await readFile(join(process.cwd(), CONFIG_FILE_NAME), {
-        encoding: 'utf8',
-      });
+      const config = await readFile(
+        join(process.cwd(), `${CONFIG_FILE_NAME}.json`),
+        {
+          encoding: 'utf8',
+        }
+      );
       const configObject = JSON.parse(config) as TranslatorConfig;
       this._config = {
         ...this._config,
@@ -34,7 +36,9 @@ export class ConfigService {
       };
       this.basePath = process.cwd();
     } catch (e) {
-      console.warn('Could not locate ".translatorrc.json" file. Using default configuration.');
+      console.warn(
+        `Could not locate "${CONFIG_FILE_NAME}.json" file. Using default configuration.`
+      );
     }
   }
 

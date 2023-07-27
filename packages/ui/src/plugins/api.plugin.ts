@@ -4,7 +4,8 @@ import type { PiniaPlugin } from 'pinia';
 import { TranslationApi } from '../api/translation.api';
 
 const api = new Api(
-  import.meta.env.VITE_CORE_DEVMODE ? 'http://localhost:3333' : undefined
+  // @ts-ignore
+  import.meta.env.VITE_CORE_DEVMODE ? 'http://localhost:2016' : undefined
 );
 const translationApi = new TranslationApi(api);
 

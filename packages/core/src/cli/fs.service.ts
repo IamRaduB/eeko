@@ -18,7 +18,10 @@ export class FileSystemService implements StorageService {
     });
   }
 
-  async readFile(locale: string, dirName: string): Promise<{ content: Record<string, any | null> }> {
+  async readFile(
+    locale: string,
+    dirName: string
+  ): Promise<{ content: Record<string, any | null> }> {
     const filePath = join(this.basePath, dirName, `${locale}.json`);
     const fileContents = await readFile(filePath, { encoding: 'utf8' });
     if (!fileContents) {
@@ -32,14 +35,18 @@ export class FileSystemService implements StorageService {
     };
   }
 
-  async writeFile(locale: string, dirName: string, content = {}): Promise<ProjectTranslation> {
-    const filePath = join(this.basePath, dirName, `${locale}.json`);
+  async writeFile(
+    fileName: string,
+    dirName: string,
+    content = {}
+  ): Promise<ProjectTranslation> {
+    const filePath = join(this.basePath, dirName, `${fileName}.json`);
     await writeFile(filePath, JSON.stringify(content, null, 2), {
       encoding: 'utf8',
     });
     return {
-      fileName: locale,
-      fileFullName: `${locale}.json`,
+      fileName,
+      fileFullName: `${fileName}.json`,
       fullPath: filePath,
     };
   }
