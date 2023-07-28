@@ -1,6 +1,6 @@
 <p align="center" style="">
   <a href="https://github.com/IamRaduB/eeko" style="">
-    <img src="./docs/images/eeko-logo.png" width="64" alt="Eeko logo" style="display: inline-block;" />
+    <img src="https://github.com/IamRaduB/eeko/raw/master/docs/images/eeko-logo.png" width="64" alt="Eeko logo" style="display: inline-block;" />
   </a>
 </p>
 
