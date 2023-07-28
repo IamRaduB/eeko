@@ -1,6 +1,6 @@
 {
   "name": "@hovrcat/eeko",
-  "version": "0.3.9",
+  "version": "0.3.10",
   "type": "commonjs",
   "description": "Translation files manager",
   "license": "MIT",
