@@ -1,0 +1,17 @@
+{
+  "general": {
+    "and": "and",
+    "test": "test",
+    "or": "or",
+    "yes": "yes",
+    "no": "no"
+  },
+  "components": {
+    "navbar": {
+      "about": "About",
+      "contact": "Contact",
+      "login": "Log in",
+      "joinUs": "Join us"
+    }
+  }
+}
