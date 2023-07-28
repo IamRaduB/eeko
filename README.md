@@ -1,10 +1,10 @@
 <p align="center" style="">
   <a href="https://github.com/IamRaduB/eeko" style="">
-    <img src="docs/images/eeko-logo.png" width="64" alt="Eeko logo" style="display: inline-block;" />
+    <img src="./docs/images/eeko-logo.png" width="64" alt="Eeko logo" style="display: inline-block;" />
   </a>
 </p>
 
-<h3 align="center">Say "Hello" to **Eeko**! An easy-to-use suite of CLI tools designed to help developers maintain clean i18n (JSON) files in their UI applications.</h3>
+<h3 align="center">Say "Hello" to Eeko! An easy-to-use suite of CLI tools designed to help developers maintain clean i18n (JSON) files in their UI applications.</h3>
 
 <p align="center">
   <a href="https://www.npmjs.org/package/@hovrcat/eeko">
