@@ -41,3 +41,4 @@ Thumbs.db
 packages/core/i18n
 packages/core/.eekorc.json
 packages/ui/.env
+.eekorc.json
